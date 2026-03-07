@@ -15,6 +15,8 @@ A high-end, dark-themed fitness website built for **Royal Fitness Gym, Wagholi, 
 
 ## ⚡ Live Preview
 
+live link https://royalfitnessgymwagholi.netlify.app/
+
 > **Run locally:** `npm install && npm run dev` → [http://localhost:5173](http://localhost:5173)
 
 ---
