@@ -1,0 +1,108 @@
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import { FaPhone, FaMapMarkerAlt, FaClock, FaEnvelope } from 'react-icons/fa'
+
+const contactInfo = [
+    { icon: FaPhone, title: 'Phone', value: '+91 97300 91331', link: 'tel:+919730091331' },
+    { icon: FaMapMarkerAlt, title: 'Address', value: 'Wagholi, Pune, Maharashtra, India', link: 'https://maps.google.com/?q=Wagholi+Pune' },
+    { icon: FaClock, title: 'Hours', value: 'Mon-Sat: 5:30 AM - 10:30 PM', link: null },
+    { icon: FaEnvelope, title: 'Email', value: 'info@royalfitness.in', link: 'mailto:info@royalfitness.in' },
+]
+
+const fadeUp = (delay = 0) => ({
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.7, delay, ease: [0.25, 0.46, 0.45, 0.94] },
+})
+
+export default function Contact() {
+    const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
+
+    return (
+        <section id="contact" className="py-28 lg:py-36" ref={ref}>
+            <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+                <motion.div
+                    {...fadeUp()}
+                    animate={inView ? fadeUp().animate : {}}
+                    className="text-center mb-16"
+                >
+                    <span className="text-accent text-[11px] font-bold tracking-[0.25em] uppercase">
+                        Contact Us
+                    </span>
+                    <h2 className="font-montserrat font-extrabold text-3xl sm:text-4xl lg:text-[3.25rem] mt-5 mb-7 leading-tight tracking-tight">
+                        Get In <span className="gradient-text">Touch</span>
+                    </h2>
+                    <p className="max-w-2xl mx-auto text-text-muted text-base lg:text-lg font-light">
+                        Visit us or reach out — we&apos;d love to help you start your fitness journey.
+                    </p>
+                </motion.div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-7">
+                    {/* Contact Cards */}
+                    <motion.div
+                        {...fadeUp(0.2)}
+                        animate={inView ? fadeUp(0.2).animate : {}}
+                        className="space-y-4"
+                    >
+                        {contactInfo.map((item) => {
+                            const Wrapper = item.link ? 'a' : 'div'
+                            return (
+                                <Wrapper
+                                    key={item.title}
+                                    {...(item.link ? { href: item.link, target: '_blank', rel: 'noopener noreferrer' } : {})}
+                                    className="group flex items-center gap-5 premium-card glow-hover p-6 cursor-pointer"
+                                >
+                                    <div className="relative z-10 shrink-0 w-13 h-13 rounded-xl bg-accent/[0.08] text-accent flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-all duration-500 group-hover:shadow-lg group-hover:shadow-accent/20">
+                                        <item.icon className="text-lg" />
+                                    </div>
+                                    <div className="relative z-10">
+                                        <p className="text-text-dim text-[10px] font-bold uppercase tracking-[0.2em] mb-1">
+                                            {item.title}
+                                        </p>
+                                        <p className="font-semibold text-[14px] tracking-tight">{item.value}</p>
+                                    </div>
+                                </Wrapper>
+                            )
+                        })}
+
+                        {/* CTA */}
+                        <div className="bg-gradient-to-br from-accent/15 via-red-950/20 to-card border border-accent/20 rounded-2xl p-7 text-center">
+                            <p className="font-montserrat font-bold text-lg mb-2 tracking-tight">
+                                Ready to Start Your Transformation?
+                            </p>
+                            <p className="text-text-muted text-[13px] mb-5 font-light">
+                                Walk in for a free tour and fitness assessment today!
+                            </p>
+                            <a
+                                href="https://wa.me/919730091331?text=Hi%20Royal%20Fitness!%20I'm%20interested%20in%20joining%20the%20gym."
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block px-7 py-3.5 bg-gradient-to-r from-accent to-red-800 text-white font-bold text-[13px] rounded-xl hover:shadow-xl hover:shadow-accent/25 transition-all duration-500 hover:scale-[1.03] active:scale-[0.98] uppercase tracking-wider"
+                            >
+                                Message on WhatsApp
+                            </a>
+                        </div>
+                    </motion.div>
+
+                    {/* Google Map */}
+                    <motion.div
+                        {...fadeUp(0.3)}
+                        animate={inView ? fadeUp(0.3).animate : {}}
+                        className="rounded-2xl overflow-hidden border border-border h-[420px] lg:h-full min-h-[420px]"
+                    >
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30253.946018917177!2d73.93!3d18.58!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c33e4e69861d%3A0xc57b7cecf0e92c73!2sWagholi%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Royal Fitness Location"
+                        />
+                    </motion.div>
+                </div>
+            </div>
+        </section>
+    )
+}
