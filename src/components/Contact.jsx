@@ -32,17 +32,20 @@ export default function Contact() {
                     <h2 className="font-montserrat font-extrabold text-3xl sm:text-4xl lg:text-[3.25rem] mt-5 mb-7 leading-tight tracking-tight">
                         Get In <span className="gradient-text">Touch</span>
                     </h2>
-                    <p className="max-w-2xl mx-auto text-text-muted text-base lg:text-lg font-light">
+                    <p className="max-w-2xl mx-auto text-text-muted text-base lg:text-lg font-light mb-3">
                         Visit us or reach out — we&apos;d love to help you start your fitness journey.
+                    </p>
+                    <p className="font-montserrat font-bold text-accent text-lg sm:text-xl tracking-tight">
+                        Call Now &amp; Start Your Fitness Journey Today
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-7">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-7 sm:gap-8">
                     {/* Contact Cards */}
                     <motion.div
                         {...fadeUp(0.2)}
                         animate={inView ? fadeUp(0.2).animate : {}}
-                        className="space-y-4"
+                        className="space-y-4 sm:space-y-5"
                     >
                         {contactInfo.map((item) => {
                             const Wrapper = item.link ? 'a' : 'div'
@@ -88,18 +91,25 @@ export default function Contact() {
                     <motion.div
                         {...fadeUp(0.3)}
                         animate={inView ? fadeUp(0.3).animate : {}}
-                        className="rounded-2xl overflow-hidden border border-border h-[420px] lg:h-full min-h-[420px]"
+                        className="flex flex-col"
                     >
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30253.946018917177!2d73.93!3d18.58!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c33e4e69861d%3A0xc57b7cecf0e92c73!2sWagholi%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-                            width="100%"
-                            height="100%"
-                            style={{ border: 0 }}
-                            allowFullScreen=""
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            title="Royal Fitness Location"
-                        />
+                        <h3 className="font-montserrat font-bold text-lg sm:text-xl md:text-2xl mb-4 tracking-tight text-center lg:text-left">
+                            📍 Find Us in <span className="gradient-text">Wagholi</span>
+                        </h3>
+                        <div className="rounded-2xl overflow-hidden border border-border shadow-2xl shadow-black/40">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d475.18481697533946!2d73.99898309989253!3d18.583875475780413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3b0022df325%3A0x8e5ccc1b7b7a1513!2sRoyal%20Fitness%20Gym!5e1!3m2!1sen!2sin!4v1773741288316!5m2!1sen!2sin"
+                                className="w-full h-[300px] sm:h-[400px] md:h-[450px]"
+                                style={{ border: 0 }}
+                                allowFullScreen=""
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                title="Royal Fitness Gym - Wagholi, Pune"
+                            />
+                        </div>
+                        <p className="text-text-dim text-xs sm:text-sm text-center lg:text-left mt-3 font-light">
+                            1st Floor, ICON Imperio, Ivy Estate, Wagholi, Pune
+                        </p>
                     </motion.div>
                 </div>
             </div>
