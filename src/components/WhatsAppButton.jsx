@@ -3,10 +3,10 @@ import { FaWhatsapp } from 'react-icons/fa'
 export default function WhatsAppButton() {
     return (
         <a
-            href="https://wa.me/919730091331?text=Hi%20Royal%20Fitness!%20I'm%20interested%20in%20joining%20the%20gym."
+            href="https://wa.me/919730091331?text=Hi,%20I%20want%20to%20join%20Royal%20Fitness%20Gym"
             target="_blank"
             rel="noopener noreferrer"
-            className="fixed bottom-7 right-7 z-50 group"
+            className="fixed bottom-7 right-7 z-50 group hidden md:block"
             aria-label="Chat on WhatsApp"
         >
             <div className="relative">

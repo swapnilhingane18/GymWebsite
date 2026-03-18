@@ -46,18 +46,18 @@ export default function Services() {
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.08 })
 
     return (
-        <section id="services" className="py-28 lg:py-36 relative" ref={ref}>
+        <section id="services" className="py-16 sm:py-24 lg:py-36 relative" ref={ref}>
             <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
                 {/* Header */}
                 <motion.div
                     {...fadeUp()}
                     animate={inView ? fadeUp().animate : {}}
-                    className="text-center mb-16"
+                    className="text-center mb-10 sm:mb-16"
                 >
                     <span className="text-accent text-[11px] font-bold tracking-[0.25em] uppercase">
                         What We Offer
                     </span>
-                    <h2 className="font-montserrat font-extrabold text-3xl sm:text-4xl lg:text-[3.25rem] mt-5 mb-7 leading-tight tracking-tight">
+                    <h2 className="font-montserrat font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[3.25rem] mt-5 mb-7 leading-tight tracking-tight">
                         Our <span className="gradient-text">Programs</span>
                     </h2>
                     <p className="max-w-2xl mx-auto text-text-muted text-base lg:text-lg font-light">

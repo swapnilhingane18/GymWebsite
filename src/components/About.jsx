@@ -20,7 +20,7 @@ export default function About() {
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 })
 
     return (
-        <section id="about" className="py-28 lg:py-36 relative ambient-glow" ref={ref}>
+        <section id="about" className="py-16 sm:py-24 lg:py-36 relative ambient-glow" ref={ref}>
             <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
                 {/* Header */}
                 <motion.div
@@ -31,7 +31,7 @@ export default function About() {
                     <span className="text-accent text-[11px] font-bold tracking-[0.25em] uppercase">
                         About Us
                     </span>
-                    <h2 className="font-montserrat font-extrabold text-3xl sm:text-4xl lg:text-[3.25rem] mt-5 mb-7 leading-tight tracking-tight">
+                    <h2 className="font-montserrat font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[3.25rem] mt-5 mb-7 leading-tight tracking-tight">
                         More Than Just a <span className="gradient-text">Gym</span>
                     </h2>
                     <p className="max-w-3xl mx-auto text-text-muted text-base lg:text-lg leading-relaxed font-light">

@@ -36,8 +36,15 @@ export default function Navbar() {
     const handleClick = (e, href) => {
         e.preventDefault()
         setMobileOpen(false)
-        const el = document.querySelector(href)
-        if (el) el.scrollIntoView({ behavior: 'smooth' })
+        // Delay scroll so useEffect has time to reset body.overflow from 'hidden'
+        setTimeout(() => {
+            const el = document.querySelector(href)
+            if (el) {
+                const navHeight = 68
+                const y = el.getBoundingClientRect().top + window.scrollY - navHeight
+                window.scrollTo({ top: y, behavior: 'smooth' })
+            }
+        }, 50)
     }
 
     return (
@@ -46,7 +53,7 @@ export default function Navbar() {
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
+                className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ease-out ${
                     scrolled || mobileOpen
                         ? 'bg-dark/80 backdrop-blur-xl shadow-2xl shadow-black/40 border-b border-white/[0.04]'
                         : 'bg-transparent'
@@ -88,32 +95,36 @@ export default function Navbar() {
                             </a>
                         </div>
 
-                        {/* Mobile Hamburger — animated icon swap */}
+                        {/* Mobile Hamburger — icon + text label */}
                         <button
                             onClick={() => setMobileOpen(!mobileOpen)}
-                            className="md:hidden relative w-10 h-10 flex items-center justify-center text-white text-2xl rounded-lg hover:bg-white/5 active:bg-white/10 transition-colors"
+                            className="md:hidden relative z-10 flex items-center gap-1.5 px-3 py-2 text-white rounded-lg hover:bg-white/5 active:bg-white/10 transition-colors"
                             aria-label="Toggle menu"
                         >
                             <AnimatePresence mode="wait" initial={false}>
                                 {mobileOpen ? (
                                     <motion.span
                                         key="close"
+                                        className="flex items-center gap-1.5"
                                         initial={{ rotate: -90, opacity: 0 }}
                                         animate={{ rotate: 0, opacity: 1 }}
                                         exit={{ rotate: 90, opacity: 0 }}
                                         transition={{ duration: 0.2 }}
                                     >
-                                        <HiX />
+                                        <HiX className="text-xl" />
+                                        <span className="text-[11px] font-semibold uppercase tracking-wider">Close</span>
                                     </motion.span>
                                 ) : (
                                     <motion.span
                                         key="open"
+                                        className="flex items-center gap-1.5"
                                         initial={{ rotate: 90, opacity: 0 }}
                                         animate={{ rotate: 0, opacity: 1 }}
                                         exit={{ rotate: -90, opacity: 0 }}
                                         transition={{ duration: 0.2 }}
                                     >
-                                        <HiMenu />
+                                        <HiMenu className="text-xl" />
+                                        <span className="text-[11px] font-semibold uppercase tracking-wider">Menu</span>
                                     </motion.span>
                                 )}
                             </AnimatePresence>
@@ -174,7 +185,7 @@ export default function Navbar() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.25 }}
-                        className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+                        className="fixed top-[68px] left-0 right-0 bottom-0 z-[9998] bg-black/60 backdrop-blur-sm md:hidden"
                         onClick={() => setMobileOpen(false)}
                         aria-hidden="true"
                     />

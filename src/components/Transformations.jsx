@@ -42,17 +42,17 @@ export default function Transformations() {
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
 
     return (
-        <section className="py-28 lg:py-36" ref={ref}>
+        <section className="py-16 sm:py-24 lg:py-36" ref={ref}>
             <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
                 <motion.div
                     {...fadeUp()}
                     animate={inView ? fadeUp().animate : {}}
-                    className="text-center mb-16"
+                    className="text-center mb-10 sm:mb-16"
                 >
                     <span className="text-accent text-[11px] font-bold tracking-[0.25em] uppercase">
                         Success Stories
                     </span>
-                    <h2 className="font-montserrat font-extrabold text-3xl sm:text-4xl lg:text-[3.25rem] mt-5 mb-7 leading-tight tracking-tight">
+                    <h2 className="font-montserrat font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[3.25rem] mt-5 mb-7 leading-tight tracking-tight">
                         Real Results From <span className="gradient-text">Real Members</span>
                     </h2>
                     <p className="max-w-2xl mx-auto text-text-muted text-base lg:text-lg font-light">
@@ -91,10 +91,10 @@ export default function Transformations() {
                             </div>
 
                             <div className="p-7">
-                                <div className="flex items-center justify-between mb-3">
+                                <div className="flex flex-col mb-3">
                                     <h3 className="font-montserrat font-bold text-base tracking-tight">{t.name}</h3>
-                                    <span className="text-[10px] text-text-dim bg-white/[0.04] px-3 py-1 rounded-full border border-border uppercase tracking-wider font-medium">
-                                        {t.duration}
+                                    <span className="text-accent text-[11px] font-bold tracking-wider uppercase mt-1">
+                                        {t.duration} Transformation
                                     </span>
                                 </div>
                                 <p className="text-text-muted text-[13px] mb-5 leading-relaxed font-light">{t.story}</p>

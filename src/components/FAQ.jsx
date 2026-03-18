@@ -41,17 +41,17 @@ export default function FAQ() {
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
 
     return (
-        <section className="py-28 lg:py-36 relative ambient-glow" ref={ref}>
+        <section className="py-16 sm:py-24 lg:py-36 relative ambient-glow" ref={ref}>
             <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
                     {...fadeUp()}
                     animate={inView ? fadeUp().animate : {}}
-                    className="text-center mb-16"
+                    className="text-center mb-10 sm:mb-16"
                 >
                     <span className="text-accent text-[11px] font-bold tracking-[0.25em] uppercase">
                         FAQ
                     </span>
-                    <h2 className="font-montserrat font-extrabold text-3xl sm:text-4xl lg:text-[3.25rem] mt-5 mb-7 leading-tight tracking-tight">
+                    <h2 className="font-montserrat font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[3.25rem] mt-5 mb-7 leading-tight tracking-tight">
                         Frequently Asked <span className="gradient-text">Questions</span>
                     </h2>
                 </motion.div>

@@ -15,14 +15,20 @@ import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
+import MobileBottomBar from './components/MobileBottomBar'
+import FreeTrialPopup from './components/FreeTrialPopup'
+import TrustBar from './components/TrustBar'
 
 const Divider = () => <div className="section-divider mx-auto max-w-5xl" />
 
 function App() {
   return (
-    <div className="min-h-screen bg-dark text-text font-poppins overflow-x-hidden">
+    <div className="min-h-screen bg-dark text-text font-poppins overflow-x-hidden pb-16 md:pb-0">
       <Navbar />
       <Hero />
+      <TrustBar />
+      <Divider />
+      <Pricing />
       <Divider />
       <About />
       <Divider />
@@ -31,8 +37,6 @@ function App() {
       <Amenities />
       <Divider />
       <Transformations />
-      <Divider />
-      <Pricing />
       <Divider />
       <Schedule />
       <Divider />
@@ -51,6 +55,8 @@ function App() {
       <Contact />
       <Footer />
       <WhatsAppButton />
+      <MobileBottomBar />
+      <FreeTrialPopup />
     </div>
   )
 }

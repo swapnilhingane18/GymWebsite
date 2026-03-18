@@ -39,16 +39,19 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
                 >
-                    <span className="inline-block px-5 py-2 mb-8 text-[11px] font-bold tracking-[0.25em] uppercase text-accent border border-accent/20 rounded-full bg-accent/[0.06] backdrop-blur-sm">
+                    <span className="inline-block px-4 py-1.5 mb-2 sm:mb-4 text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase text-accent border border-accent/20 rounded-full bg-accent/[0.06] backdrop-blur-sm">
                         Wagholi&apos;s #1 Fitness Center
                     </span>
+                    <div className="text-white hover:text-accent font-semibold text-xs sm:text-sm tracking-wide uppercase mb-5 sm:mb-8 animate-pulse">
+                        <span className="bg-accent/20 px-3 py-1 rounded-full border border-accent/30 shadow-[0_0_15px_rgba(255,44,44,0.3)]">🔥 Limited Offer – Free Trial Available</span>
+                    </div>
                 </motion.div>
 
                 <motion.h1
                     initial={{ opacity: 0, y: 35 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.9, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    className="font-montserrat font-black text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.05] mb-7 tracking-tight"
+                    className="font-montserrat font-black text-[1.85rem] sm:text-[2.5rem] md:text-6xl lg:text-[5.5rem] leading-[1.1] mb-4 sm:mb-7 tracking-tight"
                     style={{
                         textShadow:
                             '0 0 60px rgba(255, 44, 44, 0.2), 0 0 120px rgba(255, 44, 44, 0.08)',
@@ -63,16 +66,16 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.9, delay: 0.22, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    className="text-accent/90 font-semibold text-sm sm:text-base tracking-wide uppercase mb-4"
+                    className="text-accent/90 font-semibold text-xs sm:text-sm tracking-wide uppercase mb-3 sm:mb-4"
                 >
-                    Join 1000+ Members Transforming Their Body in Wagholi
+                    Join 1000+ Members in Wagholi
                 </motion.p>
 
                 <motion.p
                     initial={{ opacity: 0, y: 25 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.9, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    className="max-w-2xl mx-auto text-text-muted text-base sm:text-lg mb-10 leading-relaxed font-light"
+                    className="max-w-2xl mx-auto text-text-muted text-sm sm:text-base md:text-lg mb-6 sm:mb-10 leading-relaxed font-light"
                 >
                     Wagholi&apos;s most trusted fitness destination. World-class equipment,
                     certified expert trainers, and results-driven programs designed to
@@ -84,20 +87,20 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 25 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.9, delay: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                    className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-md sm:max-w-none mx-auto"
                 >
                     <button
                         onClick={() => handleScroll('#pricing')}
-                        className="group px-9 py-4 bg-gradient-to-r from-accent to-red-800 text-white font-bold rounded-xl text-base hover:shadow-2xl hover:shadow-accent/25 transition-all duration-500 hover:scale-[1.04] active:scale-[0.98] flex items-center gap-2.5 uppercase tracking-wide text-sm"
+                        className="group w-full sm:w-auto px-9 py-4 min-h-[52px] bg-gradient-to-r from-accent to-red-800 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-accent/25 transition-all duration-500 hover:scale-[1.04] active:scale-[0.97] flex items-center justify-center gap-2.5 uppercase tracking-wide text-[13px]"
                     >
                         Get Free Trial
                         <FaPlay className="text-[10px] group-hover:translate-x-1 transition-transform duration-300" />
                     </button>
                     <button
                         onClick={() => handleScroll('#pricing')}
-                        className="px-9 py-4 border border-white/15 text-white font-semibold rounded-xl text-sm hover:bg-white/[0.06] hover:border-white/25 transition-all duration-500 backdrop-blur-sm uppercase tracking-wide"
+                        className="w-full sm:w-auto px-9 py-4 min-h-[52px] border border-white/15 text-white font-semibold rounded-xl text-[13px] hover:bg-white/[0.06] hover:border-white/25 transition-all duration-500 backdrop-blur-sm uppercase tracking-wide active:scale-[0.97]"
                     >
-                        Explore Membership Plans
+                        Explore Plans
                     </button>
                 </motion.div>
 
@@ -106,13 +109,13 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.7 }}
-                    className="flex flex-wrap items-center justify-center gap-8 mt-10"
+                    className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 mt-6 sm:mt-10"
                 >
                     {['Certified Trainers', 'Modern Equipment', 'Beginner Friendly'].map(
                         (badge) => (
                             <div
                                 key={badge}
-                                className="flex items-center gap-2 text-text-muted/80 text-[13px] font-medium"
+                                className="flex items-center gap-1.5 text-text-muted/80 text-[11px] sm:text-[13px] font-medium"
                             >
                                 <FaCheckCircle className="text-accent/70 text-xs" />
                                 <span>{badge}</span>
@@ -126,7 +129,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.9 }}
-                    className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto"
+                    className="mt-10 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 max-w-3xl mx-auto pb-16 md:pb-0"
                 >
                     {[
                         { value: '5+', label: 'Years' },
@@ -135,7 +138,7 @@ export default function Hero() {
                         { value: '4.7★', label: 'Rating' },
                     ].map((stat) => (
                         <div key={stat.label} className="text-center">
-                            <div className="font-montserrat font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
+                            <div className="font-montserrat font-extrabold text-2xl sm:text-3xl md:text-4xl text-white tracking-tight">
                                 {stat.value}
                             </div>
                             <div className="text-text-dim text-xs mt-1.5 uppercase tracking-[0.15em] font-medium">
